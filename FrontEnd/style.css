@@ -1,0 +1,129 @@
+:root{
+    --main-font:sans-serif;
+    --font-size:16px;
+    --main-color:#0984e3;
+    --second-color:#b2bec3;
+    --main-modal-color:rgba(116, 185, 255,0.4);
+    --second-modal-color:#fdcb6e;
+    --container-width:1200px;
+
+}
+*{box-sizing: inherit;}
+
+
+body{
+    margin:0;
+    overflow-x:hidden ;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+html{
+    box-sizing: border-box;
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    scroll-behavior:smooth ;/*NAVEGACION LENTA A TRAVEZ DE LA PAGINA*/
+    
+}
+
+
+   /*+++++++++++++++++++    HEADER    ++++++++++++++++*/
+
+
+.header{
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    background-color:var(--main-color);
+    
+    text-align: center;
+}
+
+    .header h1{
+        margin: 0;
+    }
+    .header a  {
+        text-decoration: none;
+        color: white;
+    }
+
+    
+    
+
+.panel{
+    position:fixed;
+    z-index: 998;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width:100%;
+    background-color:var(--main-modal-color);
+    transform: translate(0,100%);
+    transition: transform 0.5 ease;/*----->trasnsicion para transaform<-----*/
+
+}
+/*------------------>clase para agregar y quitar el panel . cuando detecte el BOTON<-----------------*/
+.panel.is-active{
+    transform: translate(0,0);
+}
+
+/*------------------>Dentro del panel<-----------------*/
+    .menu{
+        width: inherit;
+        padding-top: 12rem;
+        display: flex;
+        background:(black);
+        flex-direction: column;
+        justify-content:space-between;/*No lo Toma*/
+        align-items: center;
+        text-align: center;
+    }
+
+        .menu a{
+            width: inherit;
+            padding: 1rem;
+            display: block;
+            font-size: 2rem;
+            text-decoration: none;
+            color:black;
+            transition: all 0.5s ease;
+        }
+
+        .menu a:hover{
+            font-weight: bold;
+            color:var(--main-color);
+            background-color:var(--main-modal-color);
+        }
+
+.section{
+    padding-top:4rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: var(--container-width);
+    min-height: 100vh;
+    text-align: center;
+}
+
+.panel-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 1vw;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+
+
+
+}
+
